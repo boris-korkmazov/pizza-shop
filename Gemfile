@@ -11,5 +11,7 @@ gem "sinatra-activerecord"
 gem "activerecord"
 
 group :development do
+  
   gem "tux"
+
 end
