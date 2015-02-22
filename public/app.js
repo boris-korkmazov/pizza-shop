@@ -1,9 +1,12 @@
 var somthing =  function(){
-    var x = window.localStorage.getItem('aaa')
-    if(! x){
-      window.localStorage.setItem('aaa', 555)
-    }
 
-    alert(window.localStorage.getItem('aaa'))  
+    var x = window.localStorage.getItem('ccc')
+    
+    x = x*1 + 1
+
+    
+    window.localStorage.setItem('ccc', x)
+
+    alert(x)  
 
 }
