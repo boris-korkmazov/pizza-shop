@@ -10,3 +10,8 @@ var somthing =  function(){
     alert(x)  
 
 }
+
+
+var addToCart = function(){
+  alert("Added to cart")
+}
