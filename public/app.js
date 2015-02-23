@@ -1,6 +1,8 @@
 (function(_this){
   _this.somthing =  function(){
     localStorage.clear()
+    updateOrdersInput();
+    updateOrdersButton();
   }
 
   _this.addToCart = function(id){
@@ -8,8 +10,9 @@
     var x = localStorage.getItem(key);
     x = x*1 + 1;
     localStorage.setItem(key, x);
-    updateOrdersInput()
-    alert("Items in your cart: " + cartGetNumberOfItems())
+    updateOrdersInput();
+    updateOrdersButton();
+    alert("Items in your cart: " + cartGetNumberOfItems());
   }
 
   var cartGetNumberOfItems = function(){
@@ -37,5 +40,13 @@
     return str
   }
 
+  var updateOrdersButton = function(){
+    $('#count_items').text(cartGetNumberOfItems())
+  }
+
+  $(function(){
+    updateOrdersInput();
+    updateOrdersButton();
+  })
 
 })(window)
