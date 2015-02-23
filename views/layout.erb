@@ -33,9 +33,12 @@
 			      <li><a href="/something">Something</a></li>
 			      <li><a href="/contacts">Contacts</a></li>
 			    </ul>
-			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="#">Cart (...)</a></li>
-			    </ul>
+	      	<form class="navbar-form navbar-right" action="/cart" method="POST">
+	      		<div class="form-group">
+          		<input type="text" name="order" class="form-control">
+        		</div>
+	      		<button type="submit" class="btn btn-nav btn-success ">Cart (...)</button>
+	      	</form>
 			  </div><!--/.nav-collapse -->
 			</nav>
 
