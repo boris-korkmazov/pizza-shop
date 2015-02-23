@@ -12,6 +12,6 @@ var somthing =  function(){
 }
 
 
-var addToCart = function(){
+var addToCart = function(id){
   alert("Added to cart")
 }
