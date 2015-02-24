@@ -44,9 +44,18 @@
     $('#count_items').text(cartGetNumberOfItems())
   }
 
+  _this.cancelOrder =  function(){
+    if (confirm('Clear cart?')){
+      window.localStorage.clear();
+      alert('Your cart is now empty')
+      location.href = '/';
+    }
+  }
+
   $(function(){
     updateOrdersInput();
     updateOrdersButton();
   })
+
 
 })(window)
