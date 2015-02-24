@@ -34,6 +34,9 @@ end
 post '/cart' do
   @orders_line = params[:order]
   @order= parse_order_line params[:order]
+  if @order.size == 0 
+    return erb :empty_cart
+  end
   @total_price = 0
   @total_qty = 0
   @order.map! do |item|
@@ -46,7 +49,7 @@ post '/cart' do
 end
 
 post '/order_placed' do
-   
+
   @order = Order.create(params[:order])
 
   erb :order_placed
