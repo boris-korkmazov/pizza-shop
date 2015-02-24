@@ -19,6 +19,8 @@ set :database, "sqlite3:pizzashop.sqlite"
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
 
 get '/' do
   @products = Product.all
@@ -30,6 +32,7 @@ get '/about' do
 end
 
 post '/cart' do
+  @orders_line = params[:order]
   @order= parse_order_line params[:order]
   @total_price = 0
   @total_qty = 0
@@ -40,4 +43,7 @@ post '/cart' do
     item
   end
   erb :cart
+end
+
+post '/place_order' do 
 end
