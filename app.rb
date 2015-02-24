@@ -45,7 +45,9 @@ post '/cart' do
   erb :cart
 end
 
-post '/place_order' do 
+post '/order_placed' do
+   
   @order = Order.create(params[:order])
-  erb "Thank you! Your order has been palced."
+
+  erb :order_placed
 end

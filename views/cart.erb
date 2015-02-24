@@ -21,8 +21,8 @@
     <th><%= @total_qty %></th>
   </tr>
 </table>
-<form action='/place_order' method="POST">
-  <input name="order[orders_line]" type='hidden' value="<%= @orders_line%>">
+<form action='/order_placed' method="POST">
+  <input name="orders_line" type='hidden' value="<%= @orders_line%>">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" name="order[name]" placeholder="Enter name">
