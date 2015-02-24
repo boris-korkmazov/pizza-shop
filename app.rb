@@ -31,8 +31,12 @@ end
 
 post '/cart' do
   @order= parse_order_line params[:order]
+  @total_price = 0
+  @total_qty = 0
   @order.map! do |item|
     item[0] = Product.find(item[0])
+    @total_price += item[0].price*item[1].to_i
+    @total_qty += item[1].to_i
     item
   end
   erb :cart

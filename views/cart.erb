@@ -1,1 +1,23 @@
 <h2>Your cart</h2>
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+  </tr>
+  <%@order.each_with_index do |item,i|%>
+    <tr>
+      <td><%= i+1%></td>
+      <td><%= item[0].title%></td>
+      <td><%= item[0].price%></td>
+      <td><%= item[1]%></td>
+    </tr>
+  <%end%>
+  <tr>
+    <th>Total</th>
+    <td></td>
+    <th><%= @total_price %></th>
+    <th><%= @total_qty %></th>
+  </tr>
+</table>
